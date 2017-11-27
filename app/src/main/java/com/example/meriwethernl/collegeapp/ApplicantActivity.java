@@ -5,6 +5,7 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.FragmentTransaction;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -15,6 +16,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.FrameLayout;
+import android.support.v4.app.Fragment;
 
 public class ApplicantActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -47,7 +49,7 @@ public class ApplicantActivity extends AppCompatActivity
             super.onBackPressed();
         }
     }
-
+    Fragment contentFragment = null;
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -75,11 +77,28 @@ public class ApplicantActivity extends AppCompatActivity
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
+        if (contentFragment != null) {
+            FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+            ft.replace(R.id.content_frame, contentFragment);
+            ft.commit();
+        }
 
         if (id == R.id.family_member) {
-            // Handle the camera action
+            contentFragment = new FamilyMemberFragment();
         }
-        else if (id == R.id.profile){}
+        if(contentFragment != null){
+            // Handle the camera action
+            FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+            ft.replace(R.id.content_frame, contentFragment);
+            ft.commit();
+        }
+        else if (id == R.id.profile){
+            contentFragment = new ProfileFragment();
+        }
+        else if (contentFragment !=null)
+        {FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+            ft.replace(R.id.content_frame, contentFragment);
+            ft.commit();}
 
 
 
