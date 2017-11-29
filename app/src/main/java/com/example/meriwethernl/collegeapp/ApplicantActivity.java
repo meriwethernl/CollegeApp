@@ -49,7 +49,7 @@ public class ApplicantActivity extends AppCompatActivity
             super.onBackPressed();
         }
     }
-    Fragment contentFragment = null;
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -63,7 +63,7 @@ public class ApplicantActivity extends AppCompatActivity
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-        Fragment contentFragment=null;
+
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             return true;
@@ -77,25 +77,18 @@ public class ApplicantActivity extends AppCompatActivity
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
-        if (contentFragment != null) {
-            FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-            ft.replace(R.id.content_frame, contentFragment);
-            ft.commit();
-        }
+        Fragment contentFragment=null;
+
+
 
         if (id == R.id.family_member) {
             contentFragment = new FamilyMemberFragment();
         }
-        if(contentFragment != null){
-            // Handle the camera action
-            FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-            ft.replace(R.id.content_frame, contentFragment);
-            ft.commit();
-        }
+
         else if (id == R.id.profile){
             contentFragment = new ProfileFragment();
         }
-        else if (contentFragment !=null)
+        if (contentFragment !=null)
         {FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
             ft.replace(R.id.content_frame, contentFragment);
             ft.commit();}
