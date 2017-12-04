@@ -1,17 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Family member content"
         android:id="@+id/textView"/>
-    <TextView
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:text="Ada"
+            android:layout_width="170dp"
+            android:layout_height="match_parent"
+            android:id="@+id/theName1" />
+
+        <EditText
+        android:layout_width="202dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/mFMEdit1"
+            android:textAppearance="@style/TextAppearance.AppCompat.Caption" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:text="TextView"
+            android:layout_width="171dp"
+            android:layout_height="match_parent"
+            android:id="@+id/theName2"
+            tools:text="Lovelace" />
+
+        <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/theName"
-        android:text="temp"
-        />
+        android:id="@+id/mFMEdit2"
+            android:textAppearance="@style/TextAppearance.AppCompat.Caption" />
+
+    </LinearLayout>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/submitButton"
+        android:text="Submit"/>
 
 </LinearLayout>

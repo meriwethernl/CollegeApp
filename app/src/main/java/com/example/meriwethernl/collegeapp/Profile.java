@@ -13,6 +13,11 @@ String lastName;
         this.lastName = lastName;
     }
 
+    public Profile() {
+        this.firstName = "Ada";
+        this.lastName = "Lovelace";
+    }
+
     public String getFirstName() {
         return firstName;
     }
