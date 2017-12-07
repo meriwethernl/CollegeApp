@@ -9,8 +9,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import static com.example.meriwethernl.collegeapp.R.id.mFMEdit1;
-
 
 /**
  * Created by meriwethernl on 11/16/2017.
@@ -30,7 +28,7 @@ public class GuardianFragment extends android.support.v4.app.Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         super.onCreateView(inflater, container, savedInstanceState);
-        View rootView = inflater.inflate(R.layout.fragment_family_member, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_guardian, container, false);
         mFMText1 = (TextView) rootView.findViewById(R.id.theName1);
         mFMText2 = (TextView) rootView.findViewById(R.id.theName2);
         mFMText3 = (TextView) rootView.findViewById(R.id.occupation);

@@ -12,23 +12,19 @@ import java.util.Date;
 public class Profile {
     String firstName;
     String lastName;
-    Date dob;
+    Calendar dob;
 
     public Profile(String firstName, String lastName) {
         this.firstName = firstName;
         this.lastName = lastName;
+        this.dob = Calendar.getInstance();
+        dob.set(1999, 00, 01);
     }
 
-    public Date getDob() {
-        return dob;
-    }
 
-    public void setDob(Date dob) {
-        this.dob = dob;
-    }
 
     public Profile() {
-        dob = new Date();
+
 
 
 
@@ -37,6 +33,14 @@ public class Profile {
 
 
 
+    }
+
+    public Calendar getDob() {
+        return dob;
+    }
+
+    public void setDob(int year, int month , int day) {
+        dob.set(year , month, day);
     }
 
     public String getFirstName() {
